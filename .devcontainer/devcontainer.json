@@ -6,10 +6,14 @@
   },
   "portsAttributes": {
     "3000": {
-      "label": "🌐 Cloud Browser",
-      "onAutoForward": "openBrowserOnce"
+      "label": "🌐 Cloud Browser (HTTP)",
+      "onAutoForward": "openBrowser"
+    },
+    "3001": {
+      "label": "🔊 Cloud Browser (HTTPS Audio)",
+      "protocol": "https"
     }
   },
   "forwardPorts": [3000, 3001],
-  "postStartCommand": "bash -c 'if [ -f browser-profile.tar.gz ]; then docker run --rm -v chromium_data:/config -v \"$(pwd)\":/backup lscr.io/linuxserver/chromium:latest tar -xzf /backup/browser-profile.tar.gz -C /config; fi; docker start chromium 2>/dev/null || docker run -d --name=chromium -e PUID=1000 -e PGID=1000 -e TZ=Etc/UTC -e CHROME_CLI=\"https://discord.com/app https://www.instagram.com https://www.tiktok.com\" -p 3000:3000 -p 3001:3001 -v chromium_data:/config --security-opt seccomp=unconfined --shm-size=\"2gb\" --restart unless-stopped lscr.io/linuxserver/chromium:latest'"
+  "postStartCommand": "bash .devcontainer/start.sh"
 }
