@@ -5,8 +5,8 @@ if [ -f browser-profile.tar.gz ]; then
   docker run --rm --entrypoint "" -v chromium_data:/config -v "$(pwd)":/backup lscr.io/linuxserver/chromium:latest tar -xzf /backup/browser-profile.tar.gz -C /config
 fi
 
-# High-Performance Chromium Flags
-PERF_FLAGS="--disable-smooth-scrolling --num-raster-threads=2 --enable-zero-copy --disable-background-timer-throttling --disable-renderer-backgrounding --disable-backgrounding-occluded-windows --disable-breakpad --disable-component-update --disable-features=Translate,OptimizationHints,MediaRouter,CalculateNativeWinOcclusion --disable-blink-features=AutomationControlled --user-agent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36' https://discord.com/app https://www.instagram.com https://www.tiktok.com"
+# High-Performance Flags (Cleanly formatted with zero spaces inside flags)
+PERF_FLAGS="--disable-smooth-scrolling --num-raster-threads=2 --enable-zero-copy --disable-background-timer-throttling --disable-renderer-backgrounding --disable-backgrounding-occluded-windows --disable-breakpad --disable-component-update --disable-features=Translate,OptimizationHints,MediaRouter,CalculateNativeWinOcclusion --disable-blink-features=AutomationControlled https://discord.com/app https://www.instagram.com https://www.tiktok.com"
 
 # Start container with Selkies speed environment variables
 if ! docker start chromium 2>/dev/null; then
