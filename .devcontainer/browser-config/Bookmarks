@@ -1,0 +1,19 @@
+{
+  "roots": {
+    "bookmark_bar": {
+      "children": [
+        { "name": "💬 Discord", "type": "url", "url": "https://discord.com/app" },
+        { "name": "📸 Instagram", "type": "url", "url": "https://www.instagram.com" },
+        { "name": "🎵 TikTok", "type": "url", "url": "https://www.tiktok.com" },
+        { "name": "📺 YouTube", "type": "url", "url": "https://www.youtube.com" },
+        { "name": "🤖 ChatGPT", "type": "url", "url": "https://chatgpt.com" },
+        { "name": "🎧 Spotify", "type": "url", "url": "https://open.spotify.com" }
+      ],
+      "name": "Bookmarks bar",
+      "type": "folder"
+    },
+    "other": { "children": [], "name": "Other bookmarks", "type": "folder" },
+    "synced": { "children": [], "name": "Mobile bookmarks", "type": "folder" }
+  },
+  "version": 1
+}
